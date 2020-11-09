@@ -1,0 +1,44 @@
+.contacts {
+  width: 500px;
+  margin: 0 auto;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__item {
+    text-align: center;
+
+    &:hover {
+      .logo__icon {
+        fill: $secondary-color;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-family: $monteserrat-font;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $main-color;
+  }
+  &__text {
+    color: $main-color;
+    font-family: $monteserrat-font;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-top: 10px;
+  }
+}
+
+.logo {
+  &__icon {
+    fill: $main-color;
+    width: 32px;
+    height: 32px;
+    transition: fill 0.2s linear;
+  }
+}

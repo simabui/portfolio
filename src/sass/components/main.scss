@@ -1,0 +1,50 @@
+h1 {
+  text-align: center;
+  margin: 0;
+}
+.name {
+  color: $secondary-color;
+}
+#home-section {
+  background-color: $background-color;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  &__title {
+    font-family: $monteserrat-font;
+    font-weight: 400;
+    max-width: 500px;
+    margin: 0 auto;
+
+    h1 {
+      color: $main-color;
+      font-weight: 400;
+    }
+  }
+  &__button {
+    @extend %button;
+    padding: 10px 20px;
+    font-family: $roboto-font;
+    margin: 10px auto 0 auto;
+    display: block;
+
+    span {
+      display: inline-block;
+      transition: transform 0.1s linear;
+    }
+
+    &:hover {
+      border-color: $secondary-color;
+      color: $secondary-color;
+      transition: all 0.2s linear;
+
+      span {
+        transform: translateX(10px);
+      }
+    }
+  }
+}

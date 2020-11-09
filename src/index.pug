@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title My portfolio
+  body
+    section.section-observe#home-section
+      #scene  
+        div(class="scene scene__bg-main" data-depth="0.2")
+        div(class="scene scene__bg-2" data-depth="0.6")
+        div(class="scene scene__bg-3" data-depth="0.3")
+        div(class="scene scene__bg-4" data-depth="0.4")
+        div(class="scene scene__bg-5" data-depth="0.6")
+        div(class="scene scene__bg-6" data-depth="0.2")
+        div(class="scene scene__bg-7" data-depth="0.1")
+      .container
+        .swiper-container
+          .burger-menu
+            input(id="menu__toggle" type="checkbox")
+            label(class="menu__btn" for="menu__toggle")
+              span
+            nav
+              ul.menu__box.swiper-pagination-burger
+          .swiper-wrapper
+            .swiper-slide
+              include pug/home
+            .swiper-slide  
+              include pug/portfolio
+            .swiper-slide  
+              include pug/contacts    
+          footer#footer-section
+            .container
+              .footer
+                nav
+                  ul.footer__list.swiper-pagination
+
+
+

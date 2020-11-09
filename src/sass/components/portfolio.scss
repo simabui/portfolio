@@ -1,0 +1,109 @@
+.portfolio {
+  &__title {
+    font-family: $monteserrat-font;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    max-width: 500px;
+    margin: 0 auto;
+    color: $main-color;
+  }
+}
+
+.projects {
+  @include row-flex();
+  @include md(padding, 0 160px);
+  @include sm(padding, 0 220px);
+  margin-top: 10px;
+  height: 340px;
+  overflow: scroll;
+
+  &__item {
+    @include col();
+    @include size(3);
+    @include size-sm(6);
+
+    a {
+      display: block;
+      overflow: hidden;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    height: 111px;
+    background-size: cover;
+    transition: transform 0.2s linear;
+    background-repeat: no-repeat;
+
+    &:hover {
+      transform: scale(1.2);
+
+      .projects__name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        p {
+          z-index: 1;
+        }
+
+        &:before {
+          display: block;
+        }
+      }
+    }
+    &-movies {
+      background-image: url("../images/moviesGallery.jpg");
+    }
+    &-todo {
+      background-image: url("../images/todo.jpg");
+      background-position: -4px 0;
+    }
+    &-chat {
+      background-image: url("../images/chat.jpg");
+      background-position: -4px 0;
+    }
+    &-calendar {
+      background-image: url("../images/calendar.jpg");
+      background-position: -4px 0;
+    }
+    &-phonebook {
+      background-image: url("../images/phone.jpg");
+    }
+    &-pictures {
+      background-image: url("../images/pixabay.jpg");
+    }
+    &-moviessearch {
+      background-image: url("../images/movieSearch.jpg");
+    }
+  }
+
+  &__name {
+    display: none;
+    font-family: $monteserrat-font;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+
+    &:before {
+      content: "";
+      display: none;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #242424bf;
+    }
+  }
+
+  &__stack {
+    font-family: $monteserrat-font;
+    color: $main-color;
+    text-align: center;
+  }
+}

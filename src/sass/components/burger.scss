@@ -1,0 +1,78 @@
+.burger-menu {
+  display: none;
+  @include sm(display, block);
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  z-index: 99;
+}
+#menu__toggle {
+  opacity: 0;
+
+  &:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  &:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  &:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  &:checked ~ nav > .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+}
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 99;
+
+  span,
+  span::before,
+  span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $white-color;
+    transition-duration: 0.3s;
+  }
+
+  span::before {
+    content: "";
+    top: -8px;
+  }
+
+  span::after {
+    content: "";
+    top: 8px;
+  }
+}
+
+.menu__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: $footer-color;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s linear;
+}

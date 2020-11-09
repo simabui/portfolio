@@ -1,0 +1,19 @@
+mixin contact(source,link)
+  .contacts__item
+    if source == 'mail'
+      a(class="logo" href=`mailto: ${link}` target="_blank" rel=noreffere)
+        svg.logo__icon
+          use(href=`images/icons/icon.svg#icon-${source}`)
+        p.contacts__text=source
+    else
+      a(class="logo" href=`${link}` target="_blank" rel=noreffere)
+        svg.logo__icon
+          use(href=`images/icons/icon.svg#icon-${source}`)
+        p.contacts__text=source
+
+.contacts
+  h2.contacts__title Contact Me
+  .contacts-wrapper
+    +contact('linkedin','https://www.linkedin.com/in/an-dyk-%D0%B0%D0%BD%D1%8C-%D0%B4%D0%B8%D0%BA-bui-%D0%B1%D1%83%D0%B9-28733115b/')
+    +contact('github','https://github.com/simabui')
+    +contact('mail','max_bui@ukr.net')

@@ -1,0 +1,19 @@
+mixin project(project,text,link, name)
+  .projects__item
+    a(href=`${link}` target="_blank" rel=noreffere)
+      div(class=`projects__img projects__img-${project}`)
+        .projects__name
+          p=name
+    p.projects__stack
+      =text
+
+.portfolio
+  h2.portfolio__title Portfolio
+  .projects
+    +project('movies','ES6/Webpack','https://simabui.github.io/movielist/', 'Movies Gallery')
+    +project('todo','ES6/Webpack','https://simabui.github.io/ToDo/', 'ToDo list')
+    +project('chat','ES6/WebSocket/Google API','https://simabui.github.io/login.html', 'Chat')
+    +project('calendar','ReactJS','https://simabui.github.io/react-calendar', 'Calendar')
+    +project('phonebook','ReactJS/Redux','https://simabui.github.io/phonebook', 'Phonebook')
+    +project('pictures','ReactJS','https://simabui.github.io/pictures', 'Pixabay pictures')
+    +project('moviessearch','ReactJS/React Router','https://smoviesearch.netlify.app/', 'Movies Search')

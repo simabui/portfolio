@@ -1,0 +1,50 @@
+#scene {
+  width: 100%;
+  height: 100vh;
+  position: absolute !important ;
+}
+.scene {
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+}
+.scene__bg-main {
+  @include bg-image("../images/stack-background.png", contain, $pos: left top);
+  @include md(background-image, url("../images/stack-background-md.png"));
+  @include md(background-position, 40px 80px);
+  @include sm(background-image, url("../images/stack-background-sm.png"));
+  @include sm(background-position, 40px 30px);
+}
+.scene__bg-2 {
+  @include bg-image("../images/stack-background-2.png", contain);
+  @include md(background-position, 0px 300px);
+  @include sm(background-image, url("../images/stack-background-2-sm.png"));
+  @include sm(background-position, 0px 400px);
+}
+.scene__bg-3 {
+  @include bg-image("../images/stack-background-3.png", contain, $pos: right top);
+  @include md(background-position, -10px 100px);
+  @include sm(background-image, url("../images/stack-background-3-sm.png"));
+}
+.scene__bg-4 {
+  @include bg-image("../images/stack-background-4.png", contain);
+  @include md(background-image, url("../images/stack-background-4-md.png"));
+  @include md(background-position, 0px 250px);
+  @include sm(background-image, url("../images/stack-background-4-sm.png"));
+  @include sm(background-position, -20px 400px);
+}
+.scene__bg-5 {
+  @include bg-image("../images/stack-background-5.png", contain, $pos: right center);
+  @include md(background-position, 0px 280px);
+}
+.scene__bg-6 {
+  @include bg-image("../images/stack-background-6.png", contain);
+}
+.scene__bg-7 {
+  @include bg-image("../images/stack-background-7.png", contain, $pos: left top);
+  @include md(background-image, url("../images/stack-background-7-md.png"));
+  @include md(background-position, 40px 60px);
+  @include sm(background-position, -40px 100px);
+}

@@ -1,0 +1,16 @@
+@import "helpers/smart-grid";
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "helpers/placeholders";
+@import "helpers/smart-grid";
+
+@import "base/normalize";
+@import "base/base";
+@import "base/fonts";
+
+@import "components/main";
+@import "components/portfolio";
+@import "components/contacts";
+@import "components/footer";
+@import "components/burger";
+@import "components/parallax";
