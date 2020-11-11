@@ -12,39 +12,45 @@
 }
 .scene__bg-main {
   @include bg-image("../images/stack-background.png", contain, $pos: left top);
-  @include md(background-image, url("../images/stack-background-md.png"));
-  @include md(background-position, 40px 80px);
-  @include sm(background-image, url("../images/stack-background-sm.png"));
-  @include sm(background-position, 40px 30px);
+  @include sm(background-image, url("../images/tablet/stack-background-md.png"));
+  @include sm(background-position, 0px 0px);
+  @include xs(background-image, url("../images/mobile/stack-background-sm.png"));
+  @include xs(background-position, 0px 0px);
 }
 .scene__bg-2 {
   @include bg-image("../images/stack-background-2.png", contain);
   @include md(background-position, 0px 300px);
-  @include sm(background-image, url("../images/stack-background-2-sm.png"));
-  @include sm(background-position, 0px 400px);
+  @include sm(background-image, url("../images/tablet/stack-background-2-md.png"));
+  @include sm(background-position, 0px 0px);
+  @include xs(background-image, url("../images/mobile/stack-background-2-sm.png"));
 }
 .scene__bg-3 {
   @include bg-image("../images/stack-background-3.png", contain, $pos: right top);
-  @include md(background-position, -10px 100px);
-  @include sm(background-image, url("../images/stack-background-3-sm.png"));
+  @include sm(background-image, url("../images/tablet/stack-background-3-md.png"));
+  @include sm(background-position, 0px 0px);
+  @include xs(background-image, url("../images/mobile/stack-background-3-sm.png"));
+  @include xs(background-position, -20px 0px);
 }
 .scene__bg-4 {
   @include bg-image("../images/stack-background-4.png", contain);
-  @include md(background-image, url("../images/stack-background-4-md.png"));
-  @include md(background-position, 0px 250px);
-  @include sm(background-image, url("../images/stack-background-4-sm.png"));
-  @include sm(background-position, -20px 400px);
+  @include sm(background-image, url("../images/tablet/stack-background-4-md.png"));
+  @include sm(background-position, 0px 0px);
+  @include xs(background-image, url("../images/mobile/stack-background-4-sm.png"));
+  @include xs(background-position, 0px 0px);
 }
 .scene__bg-5 {
   @include bg-image("../images/stack-background-5.png", contain, $pos: right center);
-  @include md(background-position, 0px 280px);
+  @include sm(background-image, url("../images/tablet/stack-background-5-md.png"));
+  @include sm(background-position, 0px 0px);
+  @include xs(background-image, url("../images/mobile/stack-background-5-sm.png"));
+  @include xs(background-position, 0px 0px);
 }
 .scene__bg-6 {
   @include bg-image("../images/stack-background-6.png", contain);
 }
 .scene__bg-7 {
   @include bg-image("../images/stack-background-7.png", contain, $pos: left top);
-  @include md(background-image, url("../images/stack-background-7-md.png"));
-  @include md(background-position, 40px 60px);
-  @include sm(background-position, -40px 100px);
+  @include sm(background-image, url("../images/tablet/stack-background-7-md.png"));
+  @include sm(background-position, 0px 0px);
+  @include xs(background-image, url("../images/mobile/stack-background-7-sm.png"));
 }

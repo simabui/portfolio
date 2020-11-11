@@ -21,12 +21,16 @@ h1 {
     margin: 0 auto;
 
     h1 {
+      @include xs(font-size, 16px);
+      @include xs(font-weight, 700);
       color: $main-color;
       font-weight: 400;
     }
   }
   &__button {
     @extend %button;
+    @include xs(padding, 5px 10px);
+    @include xs(font-size, 13px);
     padding: 10px 20px;
     font-family: $roboto-font;
     margin: 10px auto 0 auto;
@@ -46,5 +50,11 @@ h1 {
         transform: translateX(10px);
       }
     }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #home-section {
+    max-height: 768px;
   }
 }

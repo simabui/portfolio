@@ -1,13 +1,13 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "this is test package of webpack",
+  "description": "this is package for portfolio",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --env.mode development",
     "build": "webpack --env.mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "netlify deploy -p"
   },
   "author": "an dyk bui",
   "license": "ISC",

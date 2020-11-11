@@ -47,12 +47,15 @@ a {
 }
 
 .swiper-container {
-  max-width: 80%;
+  width: 100%;
   height: auto;
 }
 
 .swiper-wrapper {
   align-items: center;
+  width: 960px;
+  @include sm(width, 760px);
+  @include xs(width, 320px);
 }
 
 .swiper-pagination-bullet {
@@ -65,6 +68,7 @@ a {
   background-color: transparent;
   color: $main-color;
   @include sm(margin-top, 20px);
+  @include xs(margin-top, 10px);
 }
 .swiper-pagination-bullet-active {
   color: $secondary-color;

@@ -1,5 +1,6 @@
 .portfolio {
   &__title {
+    @include xs(font-size, 20px);
     font-family: $monteserrat-font;
     text-align: center;
     text-transform: uppercase;
@@ -12,8 +13,8 @@
 
 .projects {
   @include row-flex();
-  @include md(padding, 0 160px);
-  @include sm(padding, 0 220px);
+  // @include md(padding, 0 );
+  // @include sm(padding, 0 );
   margin-top: 10px;
   height: 340px;
   overflow: scroll;
@@ -22,6 +23,7 @@
     @include col();
     @include size(3);
     @include size-sm(6);
+    @include size-xs(12);
 
     a {
       display: block;
@@ -102,6 +104,9 @@
   }
 
   &__stack {
+    @include xs(font-weight, 700);
+    @include xs(font-size, 13px);
+    @include xs(color, #fff);
     font-family: $monteserrat-font;
     color: $main-color;
     text-align: center;
