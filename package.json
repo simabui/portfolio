@@ -49,5 +49,13 @@
     "handlebars": "^4.7.2",
     "parallax-js": "^3.1.0",
     "swiper": "^6.3.5"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie < 11",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ]
 }

@@ -1,4 +1,4 @@
-const swiperContainer = document.querySelector(".swiper-container");
+const swiperContainer = document.querySelector(".menu__box");
 const button = document.getElementById("menu__toggle");
 
 swiperContainer.addEventListener("click", handleMenu);

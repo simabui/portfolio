@@ -7,37 +7,30 @@ const cls = ["swiper-pagination", "swiper-pagination-clickable", "swiper-paginat
 const footer = document.querySelector(".footer__list");
 const burger = document.querySelector(".menu__box");
 
-// function removeClasses(elem) {
-//   cls.map((c) => {
-//     if (c.includes("swiper")) {
-//       elem.classList.remove(c);
-//     }
-//   });
-// }
-// function addClasses(elem) {
-//   cls.map((c) => elem.classList.add(c));
-// }
+function removeClasses(elem) {
+  cls.map((c) => {
+    if (c.includes("swiper")) {
+      elem.classList.remove(c);
+    }
+  });
+}
+function addClasses(elem) {
+  cls.map((c) => elem.classList.add(c));
+}
 
-// if (window.matchMedia("(max-width: 768px)").matches) {
-//   removeClasses(footer);
-//   addClasses(burger);
-// } else {
-//   addClasses(footer);
-//   removeClasses(burger);
-// }
-
-// window.addEventListener("resize", function (event) {
-//   const width = window.innerWidth;
-//   if (width === 768) {
-
-//   }
-// });
+if (window.matchMedia("(max-width: 768px)").matches) {
+  removeClasses(footer);
+  addClasses(burger);
+} else {
+  addClasses(footer);
+  removeClasses(burger);
+}
 
 const swiper = new Swiper(".swiper-container", {
   slidesPerView: 1,
   speed: 700,
   pagination: {
-    el: ".swiper-pagination,.swiper-pagination-burger",
+    el: ".swiper-pagination",
     clickable: true,
     renderBullet: function (index, className) {
       return '<li class="' + className + '">' + nav[index] + "</li>";
@@ -47,3 +40,8 @@ const swiper = new Swiper(".swiper-container", {
     nextEl: ".main__button",
   },
 });
+// window.addEventListener("resize", function (event) {
+//   const width = window.innerWidth;
+//   if (width === 768) {
+//   }
+// });

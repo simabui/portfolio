@@ -23,13 +23,14 @@
   @include sm(background-image, url("../images/tablet/stack-background-2-md.png"));
   @include sm(background-position, 0px 0px);
   @include xs(background-image, url("../images/mobile/stack-background-2-sm.png"));
+  @include sm(background-position, 0px 100px);
 }
 .scene__bg-3 {
   @include bg-image("../images/stack-background-3.png", contain, $pos: right top);
   @include sm(background-image, url("../images/tablet/stack-background-3-md.png"));
   @include sm(background-position, 0px 0px);
   @include xs(background-image, url("../images/mobile/stack-background-3-sm.png"));
-  @include xs(background-position, -20px 0px);
+  @include xs(background-position, 0px 0px);
 }
 .scene__bg-4 {
   @include bg-image("../images/stack-background-4.png", contain);
@@ -43,7 +44,7 @@
   @include sm(background-image, url("../images/tablet/stack-background-5-md.png"));
   @include sm(background-position, 0px 0px);
   @include xs(background-image, url("../images/mobile/stack-background-5-sm.png"));
-  @include xs(background-position, 0px 0px);
+  @include xs(background-position, 0px 100px);
 }
 .scene__bg-6 {
   @include bg-image("../images/stack-background-6.png", contain);

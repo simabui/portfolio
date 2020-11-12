@@ -8,6 +8,7 @@
 }
 #menu__toggle {
   opacity: 0;
+  transition: all 0.2s linear;
 
   &:checked ~ .menu__btn > span {
     transform: rotate(45deg);
@@ -22,6 +23,7 @@
   }
   &:checked ~ nav > .menu__box {
     visibility: visible;
+    opacity: 1;
     left: 0;
   }
 }
@@ -34,7 +36,7 @@
   width: 26px;
   height: 26px;
   cursor: pointer;
-  z-index: 99;
+  z-index: 999;
 
   span,
   span::before,
@@ -67,6 +69,7 @@
   justify-content: center;
   position: fixed;
   visibility: hidden;
+  opacity: 0;
   top: 0;
   left: -100%;
   width: 300px;

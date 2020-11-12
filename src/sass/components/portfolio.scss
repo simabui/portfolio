@@ -22,6 +22,7 @@
   &__item {
     @include col();
     @include size(3);
+    @include size-md(4);
     @include size-sm(6);
     @include size-xs(12);
 
@@ -110,5 +111,48 @@
     font-family: $monteserrat-font;
     color: $main-color;
     text-align: center;
+  }
+}
+
+.scroll {
+  display: none;
+  @include sm(display, block);
+  margin: 15px auto 0 auto;
+  text-align: center;
+
+  &__arrow {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+    animation: sdb 1.5s infinite;
+  }
+
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-family: $monteserrat-font;
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+  }
+}
+
+@keyframes sdb {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+    opacity: 0;
   }
 }
