@@ -10,13 +10,15 @@ mixin project(project,text,link, name)
 .portfolio
   h2.portfolio__title Portfolio
   .projects
-    +project('movies','ES6/Webpack','https://simabui.github.io/movielist/', 'Movies Gallery')
-    +project('todo','ES6/Webpack','https://simabui.github.io/ToDo/', 'ToDo list')
-    +project('chat','ES6/WebSocket/Google API','https://simabui.github.io/chat/dist/login.html', 'Chat')
+    //- +project('budget','ReactJS/React Router/NodeJS/PostgreSQL','https://raschitalochka-goit.netlify.app/', 'Budget Manager')
+    +project('moviessearch','ReactJS/React Router','https://smoviesearch.netlify.app/', 'Movies Search')
+    +project('pictures','ReactJS','https://simabui.github.io/pictures', 'Pixabay pictures')
     +project('calendar','ReactJS','https://simabui.github.io/react-calendar', 'Calendar')
     +project('phonebook','ReactJS/Redux','https://simabui.github.io/phonebook', 'Phonebook')
-    +project('pictures','ReactJS','https://simabui.github.io/pictures', 'Pixabay pictures')
-    +project('moviessearch','ReactJS/React Router','https://smoviesearch.netlify.app/', 'Movies Search')
+    +project('todo','ES6/Webpack','https://simabui.github.io/ToDo/', 'ToDo list')
+    +project('movies','ES6/Webpack','https://simabui.github.io/movielist/', 'Movies Gallery')
+    +project('chat','ES6/WebSocket/Google API','https://simabui.github.io/chat/login.html', 'Chat')
+    +project('html','Pug/Scss/Responsive Design','https://simabui.github.io/HTML-layouts/Waxom/build/#', 'Waxom')
   .scroll
     span.scroll__arrow
     p.scroll__title Scroll

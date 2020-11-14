@@ -17,10 +17,11 @@ html(lang="en")
       .container
         .burger-menu
           input(id="menu__toggle" type="checkbox")
-          label(class="menu__btn" for="menu__toggle")
-            span
-          nav
-            ul.menu__box.swiper-pagination-burger
+          .burger-menu-overlay
+            label(class="menu__btn" for="menu__toggle")
+              span
+            nav
+              ul.menu__box.swiper-pagination-burger
         .swiper-container
           //- .burger-menu
           //-   input(id="menu__toggle" type="checkbox")
