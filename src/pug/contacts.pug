@@ -1,12 +1,12 @@
 mixin contact(source,link)
   .contacts__item
     if source == 'mail'
-      a(class="logo" href=`mailto: ${link}` target="_blank" rel=noreffere)
+      a(class="logo" href=`mailto: ${link}` target="_blank" rel='noreferrer')
         svg.logo__icon
           use(href=`images/icons/icon.svg#icon-${source}`)
         p.contacts__text=source
     else
-      a(class="logo" href=`${link}` target="_blank" rel=noreffere)
+      a(class="logo" href=`${link}` target="_blank" rel='noreferrer')
         svg.logo__icon
           use(href=`images/icons/icon.svg#icon-${source}`)
         p.contacts__text=source

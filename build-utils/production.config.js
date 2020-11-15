@@ -42,6 +42,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.pug",
+      scriptLoading: "defer",
       minify: {
         collapseWhitespace: true,
         removeComments: true,
