@@ -55,7 +55,7 @@ module.exports = (env) =>
             use: "handlebars-loader",
           },
           {
-            test: /\.(jpe?g|gif)$/i,
+            test: /\.(jpe?g|gif|png)$/i,
             use: [
               {
                 loader: "url-loader",
@@ -68,7 +68,7 @@ module.exports = (env) =>
             ],
           },
           {
-            test: /\.(png|svg)$/,
+            test: /\.(svg)$/,
             use: [
               {
                 loader: "file-loader",

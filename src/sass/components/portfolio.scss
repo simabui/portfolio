@@ -41,6 +41,7 @@
 
     &:hover {
       transform: scale(1.2);
+      @include xs(transform, scale(1));
 
       .projects__name {
         display: flex;

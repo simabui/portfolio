@@ -2,7 +2,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CssUrlRelativePlugin = require("css-url-relative-plugin");
-const ImageminPlugin = require("imagemin-webpack");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
@@ -15,24 +15,15 @@ module.exports = {
     ],
   },
   plugins: [
-    new ImageminPlugin({
-      bail: false, // Ignore errors on corrupted images
+    new ImageMinimizerPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
       cache: true,
-      imageminOptions: {
+      minimizerOptions: {
         plugins: [
-          ["gifsicle", { interlaced: true }],
-          ["jpegtran", { progressive: true }],
-          ["optipng", { optimizationLevel: 5 }],
-          [
-            "svgo",
-            {
-              plugins: [
-                {
-                  removeViewBox: false,
-                },
-              ],
-            },
-          ],
+          ["mozjpeg", { quality: 50 }],
+          ["pngquant", { qualty: [0.3, 0.5] }],
+          ["gifsicle", { optimizationLevel: 3 }],
+          ["imagemin-svgo", { plugins: [{ removeViewBox: false }] }],
         ],
       },
     }),
