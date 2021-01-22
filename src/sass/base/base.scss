@@ -35,8 +35,7 @@ a {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  @include wrapper();
 }
 
 .flex-container {
@@ -87,12 +86,39 @@ footer {
   position: fixed !important;
 }
 
-// ::-webkit-scrollbar {
-//   -webkit-appearance: none;
-//   width: 5px;
-// }
-// ::-webkit-scrollbar-thumb {
-//   border-radius: 3px;
-//   background-color: rgba(0, 0, 0, 0.5);
-//   // -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-// }
+h2 {
+  color: #fff;
+  margin: 0;
+}
+.pinContainer {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+
+  &.main {
+    z-index: 4;
+  }
+
+  &.portfolio {
+    z-index: 3;
+  }
+
+  &.contacts {
+    z-index: 2;
+  }
+}
+
+.black {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 4;
+  background-color: #000;
+  opacity: 0.8;
+}
