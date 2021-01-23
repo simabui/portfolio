@@ -1,11 +1,11 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const webpackMerge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 
-const loadModeConfig = (env) => require(`./build-utils/${env.mode}.config`);
+const loadModeConfig = (env) => require(`./build-utils/${env}.config`);
 
 module.exports = (env) =>
-  webpackMerge(
+  merge(
     {
       mode: env.mode,
       entry: "./src/js/index.js",
