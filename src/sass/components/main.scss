@@ -12,25 +12,33 @@
 
   &__text {
     @include col();
-    @include size(4);
-    @include size-sm(6);
+    @include size(6);
     @include size-xs(12);
     color: #fff;
     font-family: $monteserrat-font;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1.4;
+    font-weight: 700;
+    font-size: 50px;
     margin: 0;
   }
 
   &__anim {
     @include col();
-    @include size(8);
-    @include size-sm(6);
+    @include size(6);
     @include size-xs(12);
   }
+}
+.transform-up {
+  transform: translateY(-20px);
+}
+.js-letter {
+  display: inline-block;
+  min-width: 0.3em;
+  z-index: 999;
+}
 
-  &-offset {
-    padding: 0 46px;
+.name {
+  .js-letter {
+    color: $secondary-color;
+    text-shadow: -3px 2px 0px #6ff8d9;
   }
 }

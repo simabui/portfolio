@@ -15,9 +15,9 @@ new ScrollMagic.Scene({
   .addTo(controller);
 
 const opacityAnimation = new TimelineMax()
-  .to(".black", 1, { opacity: 0, zIndex: 4, delay: 0, ease: Linear.easeNone })
-  .to(".black", 0, { opacity: 0.8, zIndex: 3, ease: Linear.easeNone })
-  .to(".black", 1, { opacity: 0, zIndex: 3, delay: 0.3, ease: Linear.easeNone });
+  .to(".black", 1, { opacity: 0, zIndex: 4, delay: 0, ease: "power1.out" })
+  .to(".black", 0, { opacity: 0.8, zIndex: 3, ease: "power1.out" })
+  .to(".black", 1, { opacity: 0, zIndex: 3, delay: 0.3, ease: "power1.out" });
 
 new ScrollMagic.Scene({
   triggerElement: ".pinContainer",
