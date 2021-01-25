@@ -1,3 +1,4 @@
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -9,6 +10,23 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(jpe?g|gif|png)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: "images/[name].[ext]",
+              limit: 10000,
+              esModule: false,
+              context: path.resolve(__dirname, "src/"),
+              outputPath: "/",
+              publicPath: "./",
+              useRelativePaths: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
@@ -17,7 +35,6 @@ module.exports = {
   plugins: [
     new ImageMinimizerPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
-      cache: true,
       minimizerOptions: {
         plugins: [
           ["mozjpeg", { quality: 50 }],
