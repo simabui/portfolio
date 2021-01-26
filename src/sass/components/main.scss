@@ -1,7 +1,9 @@
 .main {
   width: 100%;
   height: 100vh;
-  background: $gradient-background;
+  background-image: url("../images/retro-bg.jpg");
+  background-size: cover;
+  background-size: no-repeat;
 }
 
 .home {
@@ -14,10 +16,10 @@
     @include col();
     @include size(6);
     @include size-xs(12);
-    color: #fff;
+    color: #ebebeb;
     font-family: $monteserrat-font;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 45px;
     margin: 0;
   }
 
@@ -35,10 +37,48 @@
   min-width: 0.3em;
   z-index: 999;
 }
+.text-spacing {
+  letter-spacing: 5px;
+}
 
-.name {
+.retro {
   .js-letter {
-    color: $secondary-color;
-    text-shadow: -3px 2px 0px #6ff8d9;
+    font-family: $road-rage-font;
+    color: $title-color;
+    text-shadow: -6px 2px 0px $shadow-color;
   }
 }
+
+// .inner-wrapper {
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   margin: 0 auto;
+//   perspective: 180px;
+//   perspective-origin: 50% 40%;
+// }
+
+// .landscape {
+//   width: 100%;
+//   background-image: -webkit-linear-gradient(top, #cf33d9 2px, transparent 2px), -webkit-linear-gradient(left, #cf33d9 2px, transparent 2px);
+//   background-size: 50px 50px, 80px 80px;
+//   background-position: -1px -1px, -1px -1px;
+//   height: 100vh;
+//   animation: moveUp 1s infinite linear;
+
+//   &-top {
+//     transform: rotateX(85deg);
+//   }
+//   &-bottom {
+//     transform: rotateX(85deg);
+//   }
+// }
+
+// @keyframes moveUp {
+//   0% {
+//     background-position: -1px -1px, -1px -1px;
+//   }
+//   100% {
+//     background-position: -50px -50px, -1px -1px;
+//   }
+// }

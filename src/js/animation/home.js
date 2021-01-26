@@ -9,4 +9,4 @@ const els = document.querySelectorAll(".js-split");
 
 const tlTitle = new TimelineMax();
 
-tlTitle.staggerFromTo(".home__text span", 1, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, ease: "bounce.out" }, 0.1);
+tlTitle.staggerFromTo(".home__text span", 0.4, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, ease: "bounce.out" }, 0.1);

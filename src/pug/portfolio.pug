@@ -1,26 +1,26 @@
-mixin project(project,text,link, name)
-  .projects__item
-    a(href=`${link}` target="_blank" rel='noreferrer')
-      div(class=`projects__img projects__img-${project}`)
-        .projects__name
-          p=name
-    p.projects__stack
-      =text
+mixin project(projectName,link,title,stack)
+  div(class='swiper-slide')
+    a(href=`${link}` target="_blank" rel='noreferrer' class="project" ) 
+      div(class=`project__img ${projectName}`)
+      p.project__text
+        =title
+      p.project__stack
+        =stack
 
-.portfolio
-  h2.portfolio__title Portfolio
-  .projects
-    +project('rizor','GSAP3/jQuery/Responsive','https://simabui.github.io/Rizor/dist/', 'Rizor Hovertax')
-    +project('budget','ReactJS/React Router/NodeJS/PostgreSQL','https://raschitalochka-goit.netlify.app/', 'Budget Manager')
-    +project('table','ReactJS/NodeJS/MongoDB','https://simabui.github.io/table-front/', 'Documents filter')
-    +project('moviessearch','ReactJS/React Router','https://smoviesearch.netlify.app/', 'Movies Search')
-    +project('pictures','ReactJS','https://simabui.github.io/pictures', 'Pixabay pictures')
-    +project('calendar','ReactJS','https://simabui.github.io/react-calendar', 'Calendar')
-    +project('phonebook','ReactJS/Redux','https://simabui.github.io/phonebook', 'Phonebook')
-    +project('todo','ES6/Webpack','https://simabui.github.io/ToDo/', 'ToDo list')
-    +project('movies','ES6/Webpack','https://simabui.github.io/movielist/', 'Movies Gallery')
-    +project('chat','ES6/WebSocket/Google API','https://simabui.github.io/chat/login.html', 'Chat')
-    +project('html','Pug/Scss/Responsive Design','https://simabui.github.io/HTML-layouts/Waxom/build/#', 'Waxom')
-  .scroll
-    span.scroll__arrow
-    p.scroll__title Scroll
+.container
+  h2.portfolio__title.js-split.text-spacing Portfolio
+  .swiper-container
+    .swiper-wrapper
+      +project('project-rizor','https://simabui.github.io/Rizor/dist/','Rizor Hovertax','GSAP3/jQuery/Responsive')
+      +project('project-budget','https://raschitalochka-goit.netlify.app/', 'Budget Manager','ReactJS/React Router/NodeJS/PostgreSQL')
+      +project('project-table','https://simabui.github.io/table-front/', 'Documents filter','ReactJS/NodeJS/MongoDB')
+      +project('project-moviessearch','https://smoviesearch.netlify.app/', 'Movies Search','ReactJS/React Router')
+      +project('project-pictures','https://simabui.github.io/pictures', 'Pixabay pictures','ReactJS')
+      +project('project-calendar','https://simabui.github.io/react-calendar', 'Calendar','ReactJS')
+      +project('project-phonebook','https://simabui.github.io/phonebook', 'Phonebook','ReactJS/Redux')
+      +project('project-todo','https://simabui.github.io/ToDo/', 'ToDo list','ES6/Webpack')
+      +project('project-movies','https://simabui.github.io/movielist/', 'Movies Gallery','ES6/Webpack')
+      +project('project-chat','https://simabui.github.io/chat/login.html', 'Chat','ES6/WebSocket/Google API')
+      +project('project-html','https://simabui.github.io/HTML-layouts/Waxom/build/#', 'Waxom','Pug/Scss/Responsive Design')
+    .swiper-button-next
+    .swiper-button-prev
