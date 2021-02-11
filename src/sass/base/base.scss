@@ -53,7 +53,7 @@ a {
 
 .swiper-wrapper {
   align-items: center !important;
-  width: 960px !important;
+  width: 960px;
   @include sm(width, 760px!important);
   @include xs(width, 320px!important);
 }
