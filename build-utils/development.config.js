@@ -6,7 +6,7 @@ module.exports = {
     rules: [
       {
         test: /\.(jpe?g|gif|png)$/i,
-        use: ["url-loader"],
+        use: ["file-loader"],
       },
       {
         test: /\.scss$/,

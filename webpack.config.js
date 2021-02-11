@@ -39,17 +39,15 @@ module.exports = (env) =>
             use: ["babel-loader"],
           },
           {
-            test: /\.(html)$/,
-            use: "html-loader",
-          },
-          {
-            test: /\.(pug)$/,
-            use: {
-              loader: "pug-loader",
-              options: {
-                pretty: true,
+            test: /\.pug$/,
+            use: [
+              {
+                loader: "pug-loader",
+                options: {
+                  pretty: true,
+                },
               },
-            },
+            ],
           },
           {
             test: /\.hbs$/,
