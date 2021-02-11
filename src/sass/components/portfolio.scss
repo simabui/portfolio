@@ -6,16 +6,9 @@
   background-position: center;
 
   &__title {
-    font-size: 50px;
-    @include xs(font-size, 30px);
-    font-family: $road-rage-font;
-    text-align: center;
-    text-transform: uppercase;
-    max-width: 500px;
-    margin: 0 auto;
-    color: $title-color;
-    text-shadow: -3px 2px 0px $shadow-color;
+    @extend %title;
     padding-top: 50px;
+    @include xs(font-size, 40px);
   }
 }
 
@@ -37,20 +30,20 @@
   }
   & {
     &:hover {
-      .project__text {
+      .project__title {
         text-decoration: underline;
       }
     }
   }
 
-  &__text,
+  &__title,
   &__stack {
     color: #fff;
-    font-family: $monteserrat-font;
+    font-family: $roboto-font;
     text-align: center;
     margin: 0;
   }
-  &__text {
+  &__title {
     font-size: 50px;
     font-weight: 700;
     -webkit-box-reflect: below -20px linear-gradient(transparent, transparent, #0006);

@@ -2,7 +2,7 @@ mixin project(projectName,link,title,stack)
   div(class='swiper-slide')
     a(href=`${link}` target="_blank" rel='noreferrer' class="project" ) 
       div(class=`project__img ${projectName}`)
-      p.project__text
+      h2.project__title
         =title
       p.project__stack
         =stack

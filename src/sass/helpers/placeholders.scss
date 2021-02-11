@@ -1,5 +1,4 @@
 %button {
-  font-family: $monteserrat-font;
   font-size: 16px;
   font-weight: 400;
   color: $main-color;
@@ -8,6 +7,17 @@
   border: 2px solid $main-color;
   outline: none;
   background-color: transparent;
+}
+
+%title {
+  font-size: 50px;
+  font-family: $road-rage-font;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 500px;
+  margin: 0 auto;
+  color: $title-color;
+  text-shadow: -3px 2px 0px $shadow-color;
 }
 
 %link {
