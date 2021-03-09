@@ -69,6 +69,21 @@ module.exports = (env) =>
             ],
           },
           {
+            test: /\.(pdf)$/,
+            use: [
+              {
+                loader: "file-loader",
+                options: {
+                  name: "assets/[name].[ext]",
+                  context: path.resolve(__dirname, "src/"),
+                  outputPath: "/",
+                  publicPath: "./",
+                  useRelativePaths: true,
+                },
+              },
+            ],
+          },
+          {
             test: /\.(woff|woff2)$/,
             use: [
               {
