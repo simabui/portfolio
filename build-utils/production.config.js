@@ -15,7 +15,7 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
-              name: "images/[name].[ext]",
+              name: "assets/images/[name].[ext]",
               limit: 10000,
               esModule: false,
               context: path.resolve(__dirname, "src/"),
@@ -28,12 +28,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
   },

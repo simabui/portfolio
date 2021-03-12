@@ -2,9 +2,9 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { merge } = require("webpack-merge");
 
-const loadModeConfig = (env) => require(`./build-utils/${env}.config`);
+const loadModeConfig = env => require(`./build-utils/${env}.config`);
 
-module.exports = (env) =>
+module.exports = env =>
   merge(
     {
       mode: env,
@@ -59,7 +59,7 @@ module.exports = (env) =>
               {
                 loader: "file-loader",
                 options: {
-                  name: "images/icons/[name].[ext]",
+                  name: "assets/images/icons/[name].[ext]",
                   context: path.resolve(__dirname, "src/"),
                   outputPath: "/",
                   publicPath: "./",
@@ -74,7 +74,7 @@ module.exports = (env) =>
               {
                 loader: "file-loader",
                 options: {
-                  name: "assets/[name].[ext]",
+                  name: "assets/docs/[name].[ext]",
                   context: path.resolve(__dirname, "src/"),
                   outputPath: "/",
                   publicPath: "./",
@@ -102,5 +102,5 @@ module.exports = (env) =>
       },
       plugins: [new CleanWebpackPlugin()],
     },
-    loadModeConfig(env)
+    loadModeConfig(env),
   );

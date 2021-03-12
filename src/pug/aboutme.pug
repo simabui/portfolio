@@ -32,11 +32,11 @@ mixin link(source,link)
                   p=val
       .contacts
         .contacts__image
-          img(src='./images/me.jpg' alt='my photo'
+          img(src='./assets/images/me.jpg' alt='my photo'
           srcset=`\
-            ./images/me.jpg 828w,\
-            ./images/me@0,5x.jpg 414w,\
-            ./images/me@0,3x.jpg 248w`)
+            ./assets/images/me.jpg 828w,\
+            ./assets/images/me@0,5x.jpg 414w,\
+            ./assets/images/me@0,3x.jpg 248w`)
         .contacts__links
           h3.contacts__title Contact me
           a(href='https://www.linkedin.com/in/an-dyk-bui-28733115b/' target='__blank' rel='norefferer' class='fa-icon')
@@ -52,5 +52,5 @@ mixin link(source,link)
               span.fa-icon
                 i(class='fa fa-map-marker')
               | Kyiv, Ukraine
-          a(href='../assets/BuiAnDyk-CV.pdf' target='__blank' rel='norefferer' class='btn btn-cv mt-40')
+          a(href='./assets/docs/BuiAnDyk-CV.pdf' target='__blank' rel='norefferer' class='btn btn-cv mt-40')
             | Download my CV
