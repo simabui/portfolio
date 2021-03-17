@@ -42,8 +42,24 @@
     @include col();
     @include size(6);
     @include size-xs(12);
+    height: 100%;
+
+    .triangles {
+      position: relative;
+      height: 100%;
+    }
+
+    .el {
+      position: absolute;
+      left: 0;
+      top: -40%;
+      width: 900px;
+      height: 900px;
+      transition: all 800ms cubic-bezier(.175,.885,.32,1.275);
+     }
   }
 }
+
 .transform-up {
   transform: translateY(-20px);
 }

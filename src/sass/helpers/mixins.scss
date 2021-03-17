@@ -1,3 +1,18 @@
+@mixin render-triangles($obj){
+  @for $i from 1 through 170{
+    .el#{$i}{
+      transition-delay: random(700) + ms !important;
+      background: rgba(#F52389, random(10)/6);
+      @if length($obj) >= $i {
+        clip-path: nth($obj, $i );
+      } @else {
+        clip-path: $void;
+      }
+    }
+    
+  }
+}
+
 @mixin font-face($ff, $fs, $fw, $url) {
   @font-face {
     font-family: '#{$ff}';

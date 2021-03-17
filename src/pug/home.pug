@@ -1,3 +1,5 @@
+- var n = 1;
+
 .container
   .home
     p.home__text.transform-up.js-split
@@ -10,6 +12,8 @@
       br
       | developer.
     .home__anim
-      .canvas
+      .triangles
+        while n <= 170
+          div(class=`el el${n++}`)
   .scroll
     .scroll__arrow
