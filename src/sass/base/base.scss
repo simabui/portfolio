@@ -124,19 +124,21 @@ h2 {
   margin-top: 60px;
 }
 
-// render triangles 
-.torender-js{
-  @include render-triangles($js);
-}
-.torender-css{
-  @include render-triangles($css);
-}
-.torender-html{
-  @include render-triangles($html);
-}
-.torender-react{
-  @include render-triangles($react);
-}
-.torender-node{
-  @include render-triangles($node);
+// render triangles
+.torender {
+  &-js {
+    @include render-triangles($js, $js-logo);
+  }
+  &-css {
+    @include render-triangles($css, $css-logo);
+  }
+  &-html {
+    @include render-triangles($html, $html-logo);
+  }
+  &-react {
+    @include render-triangles($react, $react-logo);
+  }
+  &-node {
+    @include render-triangles($node, $node-logo);
+  }
 }

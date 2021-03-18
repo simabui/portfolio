@@ -4,6 +4,7 @@
   background-image: url("../assets/images/retro-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .home {
@@ -11,9 +12,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  @include xs-block() {
-    flex-direction: column-reverse;
-  }
+
   &__text {
     @include col();
     @include size(6);
@@ -35,6 +34,7 @@
     @include xs-block() {
       font-size: 30px;
       text-align: center;
+      order: 2;
     }
   }
 
@@ -42,26 +42,33 @@
     @include col();
     @include size(6);
     @include size-xs(12);
-    height: 100%;
+    @include xs(order, 1);
 
     .triangles {
       position: relative;
-      height: 100%;
+      width: 1200px;
+      height: 100vh;
+
+      @include sm(width, 630px);
     }
 
     .el {
       position: absolute;
-      left: 0;
-      top: -40%;
-      width: 900px;
-      height: 900px;
-      transition: all 800ms cubic-bezier(.175,.885,.32,1.275);
-     }
+      left: -10%;
+      top: -15%;
+      width: 100%;
+      height: 100%;
+      transition: all 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      @include xs(top, -45%);
+    }
   }
 }
 
 .transform-up {
   transform: translateY(-20px);
+
+  @include xs(transform, translateY(-170%));
 }
 .js-letter {
   display: inline-block;
@@ -86,5 +93,11 @@
   }
   .text-spacing {
     letter-spacing: 4px;
+  }
+  .home__anim .triangles {
+    width: 436px;
+  }
+  .transform-up {
+    transform: translateY(-240%);
   }
 }
