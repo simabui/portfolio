@@ -16,7 +16,7 @@
   &__text {
     @include col();
     @include size(6);
-    @include size-xs(12);
+    @include size-sm(12);
     color: #ebebeb;
     font-family: $roboto-font;
     font-weight: 700;
@@ -31,23 +31,25 @@
       font-size: 29px;
     }
 
-    @include xs-block() {
-      font-size: 30px;
+    @include sm-block() {
+      font-size: 35px;
       text-align: center;
       order: 2;
     }
+
+    @include xs(font-size, 30px);
   }
 
   &__anim {
     @include col();
     @include size(6);
-    @include size-xs(12);
-    @include xs(order, 1);
+    @include size-sm(12);
+    @include sm(order, 1);
 
     .triangles {
       position: relative;
       width: 1200px;
-      height: 100vh;
+      height: 110vh;
 
       @include sm(width, 630px);
     }
@@ -60,7 +62,9 @@
       height: 100%;
       transition: all 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-      @include xs(top, -45%);
+      @include sm(top, -45%);
+      @include sm(left, 16%);
+      @include xs(left, 0);
     }
   }
 }
@@ -68,7 +72,7 @@
 .transform-up {
   transform: translateY(-20px);
 
-  @include xs(transform, translateY(-170%));
+  @include sm(transform, translateY(-250%));
 }
 .js-letter {
   display: inline-block;
@@ -87,7 +91,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 376px) {
   .home__text {
     font-size: 20px;
   }
@@ -95,9 +99,10 @@
     letter-spacing: 4px;
   }
   .home__anim .triangles {
-    width: 436px;
+    width: 306px;
+    height: 50vh;
   }
   .transform-up {
-    transform: translateY(-240%);
+    transform: translateY(-100%);
   }
 }

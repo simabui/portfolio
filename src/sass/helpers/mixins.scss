@@ -1,7 +1,7 @@
 @mixin render-triangles($obj, $color) {
   @for $i from 1 through 170 {
     .el#{$i} {
-      background: rgba($color, random(10) / 10);
+      background: lighten($color, random(10) * 2.5%);
       transition-delay: random(700) + ms !important;
 
       @if length($obj) >= $i {
