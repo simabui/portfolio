@@ -1,10 +1,24 @@
+@mixin render-triangles($obj, $color) {
+  @for $i from 1 through 170 {
+    .el#{$i} {
+      background: lighten($color, random(10) * 2.5%);
+      transition-delay: random(700) + ms !important;
+
+      @if length($obj) >= $i {
+        clip-path: nth($obj, $i);
+      } @else {
+        clip-path: $void;
+      }
+    }
+  }
+}
+
 @mixin font-face($ff, $fs, $fw, $url) {
   @font-face {
-    font-family: '#{$ff}';
+    font-family: "#{$ff}";
     font-style: $fs;
     font-weight: $fw;
-    src: url('#{$url}.woff2') format('woff2'),
-      url('#{$url}.woff') format('woff');
+    src: url("#{$url}.woff2") format("woff2"), url("#{$url}.woff") format("woff");
   }
 }
 
@@ -13,12 +27,12 @@
   line-height: $height;
 }
 
-@mixin pseudo($display: inline-block, $content: '') {
+@mixin pseudo($display: inline-block, $content: "") {
   display: $display;
   content: $content;
 }
 
-@mixin bg-image($path: '', $size: cover, $repeat: no-repeat, $pos: center) {
+@mixin bg-image($path: "", $size: cover, $repeat: no-repeat, $pos: center) {
   background-image: url($path);
   // background-color: rgba(9, 9, 9, 0.9);
   background-size: $size;
@@ -26,15 +40,15 @@
   background-position: $pos;
 }
 
-@mixin center-flex($type: 'all') {
+@mixin center-flex($type: "all") {
   display: flex;
 
-  @if $type== 'all' {
+  @if $type== "all" {
     justify-content: center;
     align-items: center;
-  } @else if $type== 'hor' {
+  } @else if $type== "hor" {
     justify-content: center;
-  } @else if $type== 'ver' {
+  } @else if $type== "ver" {
     align-items: center;
   }
 }
@@ -56,7 +70,7 @@
 @mixin projects-image($list) {
   @each $image in $list {
     .#{$image}-image {
-      @include bg-image('../images/projects/#{$image}-photo.png');
+      @include bg-image("../images/projects/#{$image}-photo.png");
     }
   }
 }

@@ -1,9 +1,19 @@
-.main__title  
-  h1 
-    | Hello, I'm 
-    span.name Bui An Dyk.
-    br
-    | I'm a front-end developer.
-  button.main__button
-    | View my work 
-    span → 
+- var n = 1;
+
+.container
+  .home
+    p.home__text.transform-up.js-split
+      |Hello!
+      br
+      | My name is Bui An Dyk
+      br
+      | and I'm 
+      span.retro.text-spacing fullstack
+      br
+      | developer.
+    .home__anim
+      .triangles
+        while n <= 170
+          div(class=`el el${n++}`)
+  .scroll
+    .scroll__arrow

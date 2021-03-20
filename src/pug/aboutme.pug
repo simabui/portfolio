@@ -1,0 +1,56 @@
+mixin link(source,link)
+  li.contacts__item
+    a(class="logo" href=`${link}` target="_blank" rel='noreferrer')
+      svg
+        use(href=`./images/icons/icon.svg#icon-${source}`)
+
+.container
+  //- .inner-wrapper
+  //-   .landscape
+  fieldset.about.margin-top-60
+    legend.about__title.text-spacing About Me
+    .row
+      .bio
+        h3.bio__title Info
+        p.bio__desc.
+          I completed Bachelor's, Master's degrees in Information Technology, passionate about coding and creating amazing web applications.
+            As a fullstack developer, I enjoy working on front-end and back-end side. As a team member, I bring strong git workflow practices 
+          and expirence using agile methodologies to build software in a collaborative environment.
+        p.bio__desc.
+          Before making a career change, I worked as a QA engineer in Ubisoft where I was responsible for quality of product, creating test cases and analyzing the test results. Looking for a challenges, capable of delivering results, enthusiastic and open-minded
+        h3.bio__title Stack
+        ul.stack
+          li.stack__area Front-end
+            ul.stack__list
+              each val in ['HTML/CSS','JS(ES6)','SCSS,LESS,styled-components,@emotion-core','Pug/Handlebars','React.JS','Redux/Redux-Thunk','React-Router']
+                li.stack__item
+                  p=val
+          li.stack__area Back-end
+            ul.stack__list
+              each val in ['NodeJS/Express','MongoDB/Mongoose','PostgreSQL/Sequlize','JWT/BCrypt', 'Jest']
+                li.stack__item
+                  p=val
+      .contacts
+        .contacts__image
+          img(src='./assets/images/me.jpg' alt='my photo'
+          srcset=`\
+            ./assets/images/me.jpg 828w,\
+            ./assets/images/me@0,5x.jpg 414w,\
+            ./assets/images/me@0,3x.jpg 248w`)
+        .contacts__links
+          h3.contacts__title Contact me
+          a(href='https://www.linkedin.com/in/an-dyk-bui-28733115b/' target='__blank' rel='norefferer' class='fa-icon')
+            i(class='fab fa-linkedin-in')
+          a(href='https://github.com/simabui' target='__blank' rel='norefferer' class='fa-icon')
+            i(class='fab fa-github')
+          ul.contacts__list
+            li.contacts__item
+              span.fa-icon
+                i(class='fas fa-envelope-square')
+              | max_bui@ukr.net
+            li.contacts__item
+              span.fa-icon
+                i(class='fa fa-map-marker')
+              | Kyiv, Ukraine
+          a(href='./assets/docs/Bui_An_Dyk_Fullstack_CV.pdf' target='__blank' rel='norefferer' class='btn btn-cv mt-40')
+            | Download my CV

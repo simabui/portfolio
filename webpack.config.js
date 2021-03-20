@@ -1,20 +1,21 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const webpackMerge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 
-const loadModeConfig = (env) => require(`./build-utils/${env.mode}.config`);
+const loadModeConfig = env => require(`./build-utils/${env}.config`);
 
-module.exports = (env) =>
-  webpackMerge(
+module.exports = env =>
+  merge(
     {
-      mode: env.mode,
+      mode: env,
       entry: "./src/js/index.js",
+      target: "web",
       output: {
         path: path.resolve(__dirname, "dist"),
         filename: "js/[name].[contenthash].js",
       },
       optimization: {
-        moduleIds: "hashed",
+        moduleIds: "deterministic",
         runtimeChunk: "single",
         splitChunks: {
           cacheGroups: {
@@ -38,34 +39,19 @@ module.exports = (env) =>
             use: ["babel-loader"],
           },
           {
-            test: /\.(html)$/,
-            use: "html-loader",
-          },
-          {
-            test: /\.(pug)$/,
-            use: {
-              loader: "pug-loader",
-              options: {
-                pretty: true,
+            test: /\.pug$/,
+            use: [
+              {
+                loader: "pug-loader",
+                options: {
+                  pretty: true,
+                },
               },
-            },
+            ],
           },
           {
             test: /\.hbs$/,
             use: "handlebars-loader",
-          },
-          {
-            test: /\.(jpe?g|gif|png)$/i,
-            use: [
-              {
-                loader: "url-loader",
-                options: {
-                  name: "images/[name].[ext]",
-                  limit: 10000,
-                  esModule: false,
-                },
-              },
-            ],
           },
           {
             test: /\.(svg)$/,
@@ -73,7 +59,26 @@ module.exports = (env) =>
               {
                 loader: "file-loader",
                 options: {
-                  name: "images/icons/[name].[ext]",
+                  name: "assets/images/icons/[name].[ext]",
+                  context: path.resolve(__dirname, "src/"),
+                  outputPath: "/",
+                  publicPath: "./",
+                  useRelativePaths: true,
+                },
+              },
+            ],
+          },
+          {
+            test: /\.(pdf)$/,
+            use: [
+              {
+                loader: "file-loader",
+                options: {
+                  name: "assets/docs/[name].[ext]",
+                  context: path.resolve(__dirname, "src/"),
+                  outputPath: "/",
+                  publicPath: "./",
+                  useRelativePaths: true,
                 },
               },
             ],
@@ -82,21 +87,13 @@ module.exports = (env) =>
             test: /\.(woff|woff2)$/,
             use: [
               {
-                loader: "file-loader",
+                loader: "url-loader",
                 options: {
                   name: "fonts/[name].[ext]",
-                },
-              },
-            ],
-          },
-          {
-            test: /\.(ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-            use: [
-              {
-                loader: "file-loader",
-                options: {
-                  name: "[name].[ext]",
-                  outputPath: "fonts/",
+                  context: path.resolve(__dirname, "src/"),
+                  outputPath: "/",
+                  publicPath: "../",
+                  useRelativePaths: true,
                 },
               },
             ],
@@ -105,5 +102,5 @@ module.exports = (env) =>
       },
       plugins: [new CleanWebpackPlugin()],
     },
-    loadModeConfig(env)
+    loadModeConfig(env),
   );

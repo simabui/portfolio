@@ -1,0 +1,47 @@
+.swiper {
+  &-container {
+    max-width: 960px !important;
+    padding-top: 50px !important;
+    padding-bottom: 200px !important;
+  }
+
+  &-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-button-next {
+    background-image: url("../assets/images/arrow-next.png");
+    @include xs-block() {
+      left: 50% !important ;
+    }
+  }
+
+  &-button-prev {
+    background-image: url("../assets/images/arrow-prev.png");
+    @include xs-block() {
+      left: 40% !important;
+    }
+  }
+
+  &-button-next,
+  &-button-prev {
+    width: 80px !important;
+    height: 80px !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateY(-100%);
+
+    @include xs-block() {
+      top: 80% !important;
+      width: 50px !important;
+      height: 50px !important;
+    }
+  }
+  &-button-prev::after,
+  &-button-next::after {
+    display: none !important;
+  }
+}
