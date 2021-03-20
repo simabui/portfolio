@@ -45,25 +45,28 @@
     @include size(6);
     @include size-sm(12);
     @include sm(order, 1);
+    height: 100vh;
 
     .triangles {
       position: relative;
-      width: 1200px;
-      height: 110vh;
-
-      @include sm(width, 630px);
+      width: 100%;
+      height: 100%;
     }
 
     .el {
       position: absolute;
-      left: -10%;
-      top: -15%;
-      width: 100%;
+      left: 0;
+      top: 30%;
+      width: 200%;
       height: 100%;
       transition: all 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-      @include sm(top, -45%);
-      @include sm(left, 16%);
+      @include sm-block() {
+        top: 0;
+        left: 0;
+        width: 170%;
+        margin: auto;
+      }
       @include xs(left, 0);
     }
   }
@@ -72,7 +75,7 @@
 .transform-up {
   transform: translateY(-20px);
 
-  @include sm(transform, translateY(-250%));
+  @include sm(transform, translateY(-160%));
 }
 .js-letter {
   display: inline-block;
@@ -99,10 +102,13 @@
     letter-spacing: 4px;
   }
   .home__anim .triangles {
-    width: 306px;
-    height: 50vh;
+    width: 400px;
+    height: 100vh;
+  }
+  .home__anim .el {
+    width: 100%;
   }
   .transform-up {
-    transform: translateY(-100%);
+    transform: translateY(-200%);
   }
 }
