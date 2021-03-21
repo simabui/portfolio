@@ -5,6 +5,7 @@ $break_lg: 1100px;
 $break_md: 960px;
 $break_sm: 768px;
 $break_xs: 560px;
+$break_xxs: 320px;
 
 $offset: 30px;
 $offset_lg: $offset;
@@ -309,8 +310,20 @@ $fields_sm: 15px;
   }
 }
 
+@mixin xxs($name, $value) {
+  @media screen and (max-width: $break_xxs) {
+    #{$name}: $value;
+  }
+}
+
 @mixin xs-block() {
   @media screen and (max-width: $break_xs) {
+    @content;
+  }
+}
+
+@mixin xxs-block() {
+  @media screen and (max-width: $break_xxs) {
     @content;
   }
 }

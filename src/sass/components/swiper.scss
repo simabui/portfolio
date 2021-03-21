@@ -1,8 +1,10 @@
 .swiper {
   &-container {
     max-width: 960px !important;
-    padding-top: 50px !important;
-    padding-bottom: 200px !important;
+  }
+
+  &-wrapper {
+    height: 100vh !important;
   }
 
   &-slide {

@@ -49,12 +49,14 @@
     font-weight: 700;
     -webkit-box-reflect: below -20px linear-gradient(transparent, transparent, #0006);
     @include xs(font-size, 35px);
+    @include xxs(font-size, 29px);
   }
   &__stack {
     font-size: 18px;
     font-weight: 400;
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0006);
     @include xs(font-size, 16px);
+    @include xxs(font-size, 16px);
   }
 
   &-movies {
