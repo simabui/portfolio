@@ -14,7 +14,7 @@ tlTitle2.staggerFromTo(
     opacity: 1,
     ease: "sine.out",
   },
-  0.2
+  0.2,
 );
 const tlAbout = new TimelineMax({ paused: true });
 
@@ -29,13 +29,13 @@ tlAbout.fromTo(
     opacity: 1,
     duration: 1,
     ease: "sine.out",
-  }
+  },
 );
 
 // start animation when scrolled to second page
 window.addEventListener(
   "scroll",
-  throttle(500, () => onScrollAnimation())
+  throttle(500, () => onScrollAnimation()),
 );
 
 function onScrollAnimation() {
@@ -46,7 +46,7 @@ function onScrollAnimation() {
   } else {
     tlTitle2.invalidate();
   }
-  if (scroll >= 1700) {
+  if (scroll >= 1750) {
     tlAbout.play();
   } else {
     tlAbout.invalidate();
