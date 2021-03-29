@@ -22,7 +22,7 @@ const opacityAnimation = new TimelineMax()
 new ScrollMagic.Scene({
   triggerElement: ".pinContainer",
   triggerHook: "onLeave",
-  duration: "390%",
+  duration: "300%",
 })
   .setTween(opacityAnimation)
   .addTo(controller);
