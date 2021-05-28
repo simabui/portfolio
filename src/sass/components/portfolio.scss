@@ -10,6 +10,15 @@
     padding-top: 50px;
     @include xs(font-size, 40px);
   }
+
+  &__description {
+    font-family: $roboto-font;
+    text-align: center;
+    color: $secondary-color;
+    margin-bottom: 0;
+    @include sm(font-size, 13px);
+    @include xs(font-size, 11px);
+  }
 }
 
 .project {
