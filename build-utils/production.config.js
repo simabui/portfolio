@@ -69,20 +69,9 @@ module.exports = {
         useShortDoctype: true,
       },
     }),
-    // new FaviconsWebpackPlugin({
-    //   logo: "./src/images/logo.png",
-    //   icons: {
-    //     android: true,
-    //     appleIcon: true,
-    //     appleStartup: true,
-    //     favicons: true,
-    //     firefox: true,
-    //     opengraph: true,
-    //     twitter: true,
-    //     yandex: false,
-    //     windows: true,
-    //   },
-    // }),
+    new FaviconsWebpackPlugin({
+      logo: "./src/assets/images/logo.png",
+    }),
   ],
   devServer: {
     stats: "errors-only",
